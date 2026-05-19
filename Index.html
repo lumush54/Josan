@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Josan Technology Centre - Professional web design company in Kenya offering affordable websites, e-commerce, school websites and business solutions." />
+  <meta name="keywords" content="web design Kenya, website development Nairobi, e-commerce websites Kenya, school website design, Josan Technology Centre" />
+  <meta name="author" content="Josan Technology Centre" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Josan Technology Centre - Web Design Kenya" />
+  <meta property="og:description" content="Affordable and modern website solutions for businesses, schools, and individuals in Kenya." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1522071820081-009f0129c71c" />
+  <meta property="og:url" content="https://josantechcentre.com" />
+  <meta property="og:type" content="website" />
+
+  <title>Josan Technology Centre | Web Design Kenya</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://via.placeholder.com/32x32/0f172a/38bdf8?text=JT" type="image/x-icon">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      line-height:1.6;
+      color:#222;
+      background:#f9f9f9;
+    }
+
+    header{
+      background:#0f172a;
+      color:#fff;
+      padding:15px 40px;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    header h1{
+      font-size:22px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    nav{
+      display:flex;
+      align-items:center;
+      gap:20px;
+    }
+
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      font-size:15px;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#38bdf8;
+    }
+
+    /* Mobile Menu */
+    .hamburger{
+      display:none;
+      font-size:28px;
+      cursor:pointer;
+      background:none;
+      border:none;
+      color:white;
+    }
+
+    .hero{
+      background:linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.85)), 
+                 url('https://images.unsplash.com/photo-1522071820081-009f0129c71c') center/cover no-repeat;
+      color:#fff;
+      padding:140px 20px 100px;
+      text-align:center;
+    }
+
+    .hero h2{
+      font-size:48px;
+      margin-bottom:15px;
+    }
+
+    .hero p{
+      font-size:20px;
+      margin-bottom:30px;
+      max-width:700px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .btn{
+      background:#38bdf8;
+      color:#000;
+      padding:12px 28px;
+      margin:8px;
+      border:none;
+      border-radius:6px;
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-block;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:scale(1.08);
+      background:#22a8f0;
+    }
+
+    section{
+      padding:80px 20px;
+      max-width:1200px;
+      margin:auto;
+      opacity:0;
+      transform:translateY(40px);
+      transition:all 0.8s ease;
+    }
+
+    section.show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    h2.section-title{
+      text-align:center;
+      margin-bottom:50px;
+      font-size:34px;
+      position:relative;
+    }
+
+    h2.section-title:after{
+      content:'';
+      width:80px;
+      height:3px;
+      background:#38bdf8;
+      display:block;
+      margin:15px auto;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:#fff;
+      padding:25px;
+      border-radius:12px;
+      box-shadow:0 4px 15px rgba(0,0,0,0.08);
+      transition:0.4s;
+      text-align:center;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 10px 25px rgba(0,0,0,0.12);
+    }
+
+    .pricing{
+      background:#0f172a;
+      color:#fff;
+    }
+
+    .pricing .card{
+      background:#1e293b;
+      color:#fff;
+    }
+
+    .price{
+      font-size:32px;
+      font-weight:bold;
+      color:#38bdf8;
+      margin:15px 0;
+    }
+
+    .testimonial{
+      background:#f1f5f9;
+      font-style:italic;
+    }
+
+    footer{
+      background:#0f172a;
+      color:#fff;
+      text-align:center;
+      padding:50px 20px;
+    }
+
+    .footer-links{
+      margin:20px 0;
+    }
+
+    .footer-links a{
+      color:#ccc;
+      margin:0 12px;
+      text-decoration:none;
+    }
+
+    input, textarea{
+      width:100%;
+      padding:12px;
+      margin:10px 0;
+      border:1px solid #ccc;
+      border-radius:6px;
+      font-size:16px;
+    }
+
+    .whatsapp{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:#25D366;
+      color:#fff;
+      padding:15px 18px;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:bold;
+      box-shadow:0 4px 15px rgba(0,0,0,0.2);
+      z-index:999;
+    }
+
+    @media (max-width: 768px){
+      .hamburger{
+        display:block;
+      }
+      nav{
+        position:fixed;
+        top:70px;
+        left:-100%;
+        height:100vh;
+        width:100%;
+        background:#0f172a;
+        flex-direction:column;
+        padding-top:50px;
+        transition:0.4s;
+      }
+      nav.active{
+        left:0;
+      }
+      .hero h2{
+        font-size:36px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1><i class="fas fa-laptop-code"></i> Josan Technology Centre</h1>
+  <nav id="nav-menu">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="hamburger" id="hamburger">☰</button>
+</header>
+
+<!-- HERO -->
+<section class="hero show" id="home">
+  <h2>Professional Websites That Grow Your Business</h2>
+  <p>Affordable & Modern Web Solutions for Businesses, Schools, Churches & Individuals in Kenya</p>
+  <a class="btn" href="#contact">Get a Free Quote</a>
+  <a class="btn" href="#portfolio">View Our Work</a>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="section-title">About Us</h2>
+  <p style="text-align:center; max-width:900px; margin:auto; font-size:18px;">
+    Josan Technology Centre is a trusted Kenyan web design company based in Nairobi. We specialize in creating fast, responsive, 
+    and SEO-friendly websites that help local businesses and institutions succeed online. With years of experience, we deliver 
+    quality digital solutions at affordable prices.
+  </p>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <h2 class="section-title">Our Services</h2>
+  <div class="grid">
+    <div class="card"><h3>🏢 Business Websites</h3><p>Professional corporate websites</p></div>
+    <div class="card"><h3>🏫 School & Church Websites</h3><p>Admission portals, events & announcements</p></div>
+    <div class="card"><h3>🛒 E-commerce Stores</h3><p>Online shops with payments integration</p></div>
+    <div class="card"><h3>📱 Responsive Redesign</h3><p>Modernize your old website</p></div>
+    <div class="card"><h3>🔍 SEO Optimization</h3><p>Rank higher on Google</p></div>
+    <div class="card"><h3>☁️ Hosting & Domain</h3><p>Fast hosting + domain registration</p></div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <h2 class="section-title">Our Recent Work</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://picsum.photos/id/1015/600/400" alt="School Website Project" style="width:100%; border-radius:8px;">
+      <h3>School Website</h3>
+      <p>St. Mary's Academy - Full school management website</p>
+    </div>
+    <div class="card">
+      <img src="https://picsum.photos/id/106/600/400" alt="Business Website Project" style="width:100%; border-radius:8px;">
+      <h3>Business Website</h3>
+      <p>East Africa Hardware Ltd - Corporate site</p>
+    </div>
+    <div class="card">
+      <img src="https://picsum.photos/id/201/600/400" alt="E-commerce Project" style="width:100%; border-radius:8px;">
+      <h3>E-commerce Store</h3>
+      <p>Kilimanjaro Fashion - Online clothing store</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="pricing">
+  <h2 class="section-title">Pricing Packages</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Basic</h3>
+      <div class="price">KSh 15,000</div>
+      <p>1–3 Pages • Mobile Responsive • Contact Form • WhatsApp Integration</p>
+      <a href="#contact" class="btn" style="background:#fff;color:#0f172a;">Choose Basic</a>
+    </div>
+    <div class="card" style="transform:scale(1.05); border:3px solid #38bdf8;">
+      <h3>Standard <span style="background:#38bdf8;color:white;padding:2px 8px;border-radius:12px;font-size:14px;">Most Popular</span></h3>
+      <div class="price">KSh 35,000</div>
+      <p>Up to 7 Pages • SEO Optimized • Blog • Gallery • Payments • 6 Months Support</p>
+      <a href="#contact" class="btn" style="background:#fff;color:#0f172a;">Choose Standard</a>
+    </div>
+    <div class="card">
+      <h3>Premium</h3>
+      <div class="price">KSh 75,000+</div>
+      <p>Custom Features • E-commerce • Dashboard • Advanced SEO • 1 Year Support</p>
+      <a href="#contact" class="btn" style="background:#fff;color:#0f172a;">Choose Premium</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="testimonial">
+  <h2 class="section-title">What Our Clients Say</h2>
+  <div class="grid">
+    <div class="card">
+      <p>"Josan Technology Centre delivered our school website on time and it looks very professional. Highly recommended!"</p>
+      <strong>— Sr. Mary, St. Francis School</strong>
+    </div>
+    <div class="card">
+      <p>"My business website increased customer inquiries by over 300%. Great work!"</p>
+      <strong>— John Kamau, Kamau Hardware</strong>
+    </div>
+    <div class="card">
+      <p>"Professional, affordable and very responsive team. Best web designers in Nairobi."</p>
+      <strong>— Amina Hassan, Fashion Store Owner</strong>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="section-title">Get In Touch</h2>
+  <div style="max-width:700px;margin:auto;">
+    <p style="text-align:center;margin-bottom:30px;">
+      <strong>Phone:</strong> <a href="tel:0740492622">0740 492 622</a> | 
+      <strong>Email:</strong> <a href="mailto:josantechcentre@gmail.com">josantechcentre@gmail.com</a>
+    </p>
+
+    <!-- Updated Formspree Form -->
+    <form action="https://formspree.io/f/mqejaglo" method="POST">
+      <input type="text" name="name" placeholder="Your Full Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <input type="tel" name="phone" placeholder="Phone Number" />
+      <input type="text" name="service" placeholder="Service Interested In (e.g. School Website)" />
+      <textarea name="message" rows="6" placeholder="Tell us more about your project..." required></textarea>
+      
+      <!-- Hidden fields for better experience -->
+      <input type="hidden" name="_subject" value="New Website Inquiry - Josan Technology Centre" />
+      <input type="hidden" name="_next" value="https://josantechcentre.com/#contact" />
+      
+      <button class="btn" type="submit" id="submit-btn" style="width:100%;padding:14px;">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Josan Technology Centre</strong> © 2024–2026. All Rights Reserved. | Nairobi, Kenya</p>
+  <div class="footer-links">
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#pricing">Pricing</a>
+  </div>
+  <p>Made with ❤️ for Kenyan Businesses</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/254740492622" target="_blank">
+  <i class="fab fa-whatsapp" style="font-size:24px;"></i>
+</a>
+
+<script>
+  // Mobile Menu
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
+
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+
+  // Close menu when clicking a link
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('active');
+    });
+  });
+
+  // Intersection Observer for animations
+  const sections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('show');
+      }
+    });
+  });
+
+  sections.forEach(section => observer.observe(section));
+
+  // Formspree Form Enhancement
+  const form = document.querySelector('#contact form');
+  const submitBtn = document.getElementById('submit-btn');
+
+  form.addEventListener('submit', function() {
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    // Reset button after 4 seconds (in case user stays on page)
+    setTimeout(() => {
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    }, 4000);
+  });
+</script>
+
+</body>
+</html>
